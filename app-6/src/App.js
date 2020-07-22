@@ -25,12 +25,16 @@ class App extends Component {
   }
 
   render() {
+    let listDisplay = this.state.list.map((element, index) => {
+      return <Todo key={index} task={element} />
+    })
+
     return (
       <div>
         <h1>Tasks</h1>
         <input onChange={e => this.handleChange(e.target.value)}/>
         <button onClick={e => this.addTask(this.state.userInput)}>Add Task</button>
-        <Todo listy={this.state.list}/>
+        <div>{listDisplay}</div>
       </div>
     )
   }
