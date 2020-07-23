@@ -36,7 +36,7 @@ class App extends Component {
       <div className="App">
         <h1>To Do List</h1>
         <NewTask input={this.state.input} list={this.state.list} change={this.handleChange} click={this.handleClick}/>
-        {listy}
+        <List list={this.state.list}/>
       </div>
     )
   }
